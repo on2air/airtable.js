@@ -69,6 +69,7 @@ function runAction(
             clearTimeout(timeout);
             if (resp.status === 429 && !base._airtable._noRetryIfRateLimited) {
                 const backoffDelayMs = exponentialBackoffWithJitter(numAttempts);
+                console.log('Received 429 TOO_MANY_REQUESTS. Retrying in ' + backoffDelayMs)
                 setTimeout(() => {
                     runAction(base, method, path, queryParams, bodyData, callback, numAttempts + 1);
                 }, backoffDelayMs);

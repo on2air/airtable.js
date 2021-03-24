@@ -1,9 +1,15 @@
 {
-  "name": "airtable",
-  "version": "0.10.1",
+  "name": "on2air-airtable",
+  "version": "0.10.1.1",
   "license": "MIT",
-  "homepage": "https://github.com/on2air/airtable.js",
-  "repository": "git://github.com/on2air/airtable.js.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:on2air/airtable.js.git"
+  },
+  "author": {
+    "name": "Openside/On2Air",
+    "email": "dev@on2air.com"
+  },
   "private": false,
   "scripts": {
     "pretest": "npm run lint && npm run prepare; true",

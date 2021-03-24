@@ -372,8 +372,8 @@ module.exports = HttpHeaders;
 
 },{"lodash/forEach":169}],10:[function(require,module,exports){
 module.exports={
-    "INITIAL_RETRY_DELAY_IF_RATE_LIMITED": 5000,
-    "MAX_RETRY_DELAY_IF_RATE_LIMITED": 600000
+    "INITIAL_RETRY_DELAY_IF_RATE_LIMITED": 1000,
+    "MAX_RETRY_DELAY_IF_RATE_LIMITED": 5000
 }
 
 },{}],11:[function(require,module,exports){
