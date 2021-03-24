@@ -2,8 +2,8 @@
   "name": "airtable",
   "version": "0.10.1",
   "license": "MIT",
-  "homepage": "https://github.com/airtable/airtable.js",
-  "repository": "git://github.com/airtable/airtable.js.git",
+  "homepage": "https://github.com/on2air/airtable.js",
+  "repository": "git://github.com/on2air/airtable.js.git",
   "private": false,
   "scripts": {
     "pretest": "npm run lint && npm run prepare; true",
