@@ -2,7 +2,7 @@ import check from './typecheck';
 import isString from 'lodash/isString';
 import isNumber from 'lodash/isNumber';
 import isPlainObject from 'lodash/isPlainObject';
-import includes from 'lodash/includes';
+import isBoolean from 'lodash/isBoolean';
 
 export const paramValidators = {
     fields: check(
@@ -23,7 +23,7 @@ export const paramValidators = {
             return (
                 isPlainObject(obj) &&
                 isString(obj.field) &&
-                (obj.direction === void 0 || includes(['asc', 'desc'], obj.direction))
+                (obj.direction === void 0 || ['asc', 'desc'].includes(obj.direction))
             );
         }),
         'the value for `sort` should be an array of sort objects. ' +
@@ -34,12 +34,17 @@ export const paramValidators = {
     view: check(isString, 'the value for `view` should be a string'),
 
     cellFormat: check((cellFormat): cellFormat is 'json' | 'string' => {
-        return isString(cellFormat) && includes(['json', 'string'], cellFormat);
+        return isString(cellFormat) && ['json', 'string'].includes(cellFormat);
     }, 'the value for `cellFormat` should be "json" or "string"'),
 
     timeZone: check(isString, 'the value for `timeZone` should be a string'),
 
     userLocale: check(isString, 'the value for `userLocale` should be a string'),
+
+    returnFieldsByFieldId: check(
+        isBoolean,
+        'the value for `returnFieldsByFieldId` should be a boolean'
+    ),
 };
 
 export interface SortParameter<TFields> {
@@ -58,4 +63,5 @@ export interface QueryParams<TFields> {
     cellFormat?: 'json' | 'string';
     timeZone?: string;
     userLocale?: string;
+    returnFieldsByFieldId?: boolean;
 }
