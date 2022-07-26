@@ -9,7 +9,7 @@ export const paramValidators = {
         check.isArrayOf(isString),
         'the value for `fields` should be an array of strings'
     ),
-
+    recordMetadata: check(isString, 'the value for `recordMetadata` should be a string'),
     filterByFormula: check(isString, 'the value for `filterByFormula` should be a string'),
 
     maxRecords: check(isNumber, 'the value for `maxRecords` should be a number'),
